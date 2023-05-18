@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encriptador - Desencriptador Challenge 01</title>
+    <link rel="icon" href="Images/Logo_Tab.svg">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100&family=Wix+Madefor+Text&display=swap" rel="stylesheet">
+   
+  </head>
+
+  <body>
+    <header>
+      <img class="logo"src="Images/Logo.svg" alt="">
+      <h1>Encriptador y Desencriptador</h1>
+     
+    </header>
+
+    <main>
+        <section class="ingresoDatos">
+            <div class="ingresoTexto"> 
+                <textarea class="entradaTexto" id="entradaTexto" placeholder="Ingrese el texto aquí"></textarea>
+            </div> 
+            
+            <div class="mensajeAlerta"> 
+                <p>&#8505 Ingresa solamente minúsculas sin acentos</p>
+            </div>
+
+            <div class="botones">
+                <input class="disenoBoton" id="botonEncriptar" type="button" value="Encriptar">
+                <input class="disenoBoton" id="botonDesencriptar"type="button" value="Desencriptar">
+            </div>
+        </section>
+
+        <section class="mensajeFinal">
+            <div class="noResuelto" id="noResuelto">
+                <div class="imagenMensaje">
+                    <img src="Images/Muñeco.svg" alt="">
+                </div>
+
+                <div class="mensajeParrafo">
+                    <h2>Ningun mensaje encontrado</h2>
+                    <p>Ingresa el texto que deseas encriptar o desencriptar</p>
+                </div>
+            </div>
+            
+            
+            <div class="contenedorMensaje">
+                <textarea class="salidaTexto" id="salidaTexto" name="salidaTexto" disabled ></textarea>
+                <input class="botonCopiar" id="botonCopiar" type="button" value="Copiar">
+            </div>
+            
+        </section>
+    </main>
+
+    <footer>
+        <p>Realizado por Juan Sebastian Vargas Naranjo @sebitasorange 
+  </body>
+  <script src="js/script.js"></script>
+</html>

@@ -1,57 +1,46 @@
-const ingresoTexto = document.querySelector("#entradatexto");
-const salidaTexto = document.querySelector("#salidaTexto");
+const textoIngresado = document.querySelector("#entradaTexto");
+const textoSalida = document.querySelector("#salidaTexto");
+const encriptar = document.querySelector("#botonEncriptar")
+const desencriptar = document.querySelector("#botonDesencriptar")
+const copiar = document.querySelector("#botonCopiar")
+const pegar = document.querySelector("#botonPegar")
 
-const btnEncriptar = document.querySelector("#botonEncriptar");
-const btnDesencriptar = document.querySelector("#botonDesencriptar");
-const btnCopiar = document.querySelector("#botonCopiar");
-
-function encriptar (){
+function encriptacion(){
     let texto = entradaTexto.value.toLowerCase();
-    let textoEncriptado = texto
-    .replaceAll("e", "enter")
-    .replaceAll("i", "imes")
-    .replaceAll("o", "ober")
-    .replaceAll("a", "ai")
-    .replaceAll("u", "ufat");
-
-    // if (texto = "á" || "é" || "í" || "ó" || "ú"){
-    //   alert("Recuerda que no se pueden usar acentos")
-    // }
-    // else{
+    let paraEncriptar = texto.replaceAll("e","enter").replaceAll("i","imes").replaceAll("a","ai").replaceAll("o","ober").replaceAll("u","ufat");
+    // console.log(paraEncriptar);
+ 
+        
+      
     document.getElementById("noResuelto").style.visibility = "hidden";
     document.getElementById("botonCopiar").style.visibility = "visible";
-  
-    salidaTexto.value = textoEncriptado;
-  
-    document.getElementById("texto").value = '';
-    // }
-  
-  }
+    textoSalida.value = paraEncriptar;
 
-function desencriptar (){
-    let textoEncriptado = entradaTexto.value.toLowerCase();
-    let texto = textoEncriptado
-    .replaceAll("enter", "e")
-    .replaceAll("imes", "i")
-    .replaceAll("ober", "o")
-    .replaceAll("ai", "a")
-    .replaceAll("ufat", "u");
-  
+}
+
+function desencriptacion(){
+    let desencriptado = entradaTexto.value.toLowerCase();
+    let texto = desencriptado.replaceAll("enter","e").replaceAll("imes","i").replaceAll("ai","a").replaceAll("ober","o").replaceAll("ufat","u");
+     
     document.getElementById("noResuelto").style.visibility = "hidden";
     document.getElementById("botonCopiar").style.visibility = "visible";
-  
-    salidaTexto.value = texto;
-  
-    document.getElementById("texto").value = '';
-  
-}
-  
-function copiar () {
-let textoEncriptado = salidaTexto.value;
-navigator.clipboard.writeText(textoEncriptado);
+    textoSalida.value = texto;
 }
 
+function copiando(){
+    let textoProcesado = textoSalida.value;
+    navigator.clipboard.writeText(textoProcesado);
+}
 
-btnEncriptar.onclick = encriptar;
-btnDesencriptar.onclick = desencriptar;
-btnCopiar.onclick = copiar;
+function pegando(){
+    let pegado = navigator.clipboard.readText();
+    pegado.then(function(texto){
+        document.getElementById("entradaTexto").value=texto;
+    });
+
+}
+
+encriptar.onclick= encriptacion;
+desencriptar.onclick= desencriptacion;
+copiar.onclick=copiando;
+pegar.onclick=pegando;

@@ -112,6 +112,19 @@ main {
     background: #041121;
     color: #fff;
 }
+#botonPegar{
+    background-color: #D8DFE8;
+    color: #0A3871;
+}
+
+#botonPegar:hover{
+    background-color: #86acdd;
+}
+
+#botonPegar:active {
+    background: #041121;
+    color: #fff;
+}
 
 .mensajeFinal{
     width: 25%;
